@@ -26,3 +26,30 @@ input[type="number"] {
     border-radius: 5px;
     border: 1px solid #d1e1f1;
 }
+
+#varianceInfo {
+    background-color: #fffde7;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #fffacc;
+}
+
+#attemptHistory {
+    margin: 20px 0;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #d1e1f1;
+}
+
+th, td {
+    padding: 8px 12px;
+    border: 1px solid #d1e1f1;
+}
+
+th {
+    background-color: #eef5ff;
+}
