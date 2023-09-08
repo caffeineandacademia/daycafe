@@ -16,7 +16,7 @@
         <li>Based on the data and the total residents in the area, predict the number of customers for next month.</li>
         <li>Decide on the number of coffee cups (inventory) you'll need based on your prediction.</li>
         <li>Click "Submit Prediction" to see if your inventory matches the actual number of customers. Aim to get it "Just Right!" without shortages or excess supplies.</li>
-        <li>You have 3 attempts to refine your predictions. Good luck!</li>
+        <li>You have 5 attempts to refine your predictions. Good luck!</li>
     </ol>
 </div>
 
@@ -29,8 +29,6 @@
     <p><strong>Total residents in the area:</strong> <span id="residents">0</span></p>
 </div>
 
-<!-- ... Other parts of the code ... -->
-
 <div id="modelInfo">
     <h2>Underlying Linear Model</h2>
     <p>Expected Customers = Base Customers + Ratio × Residents</p>
@@ -41,7 +39,11 @@
     </ul>
 </div>
 
-   
+<div id="varianceInfo">
+    <h3>Note:</h3>
+    <p>The actual number of customers each month includes some variance due to unpredictable factors.</p>
+</div>
+
 <div id="predictionTool">
     <h2>Make Your Prediction</h2>
     <label for="predictedCustomers">Predicted Customers for Next Month:</label>
@@ -50,11 +52,6 @@
     <input type="number" id="supplies">
     <button onclick="checkPrediction()">Submit Prediction</button>
     <p id="feedback"></p>
-</div>
-
-<div id="varianceInfo">
-    <h3>Note:</h3>
-    <p>The actual number of customers each month includes some variance due to unpredictable factors.</p>
 </div>
 
 <div id="attemptHistory">
@@ -73,7 +70,7 @@
         </tbody>
     </table>
 </div>
-    
+
 <div id="attempts">
     <h2>Attempts Remaining: <span id="remainingAttempts">5</span></h2>
 </div>
