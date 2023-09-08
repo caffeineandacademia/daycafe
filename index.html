@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Day Cafe Prediction Game</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body onload="initialize()">
+
+<h1>Day Cafe Prediction Game</h1>
+
+<div id="instructions">
+    <p>Welcome to the Day Cafe Prediction Game! Here's how it works:</p>
+    <ol>
+        <li>Review the past customer data to understand trends.</li>
+        <li>Based on the data and the total residents in the area, predict the number of customers for next month.</li>
+        <li>Decide on the number of coffee cups (inventory) you'll need based on your prediction.</li>
+        <li>Click "Submit Prediction" to see if your inventory matches the actual number of customers. Aim to get it "Just Right!" without shortages or excess supplies.</li>
+        <li>You have 3 attempts to refine your predictions. Good luck!</li>
+    </ol>
+</div>
+
+<div id="analyticsData">
+    <h2>Past Customer Data</h2>
+    <ul>
+        <li><strong>Two months ago:</strong> <span id="twoMonthsAgo">0</span> customers</li>
+        <li><strong>Last month:</strong> <span id="lastMonth">0</span> customers</li>
+    </ul>
+    <p><strong>Total residents in the area:</strong> <span id="residents">0</span></p>
+</div>
+
+<div id="predictionTool">
+    <h2>Make Your Prediction</h2>
+    <label for="predictedCustomers">Predicted Customers for Next Month:</label>
+    <input type="number" id="predictedCustomers">
+    <label for="supplies">Number of Coffee Cups (Inventory):</label>
+    <input type="number" id="supplies">
+    <button onclick="checkPrediction()">Submit Prediction</button>
+    <p id="feedback"></p>
+</div>
+
+<div id="attempts">
+    <h2>Attempts Remaining: <span id="remainingAttempts">3</span></h2>
+</div>
+
+</body>
+</html>
