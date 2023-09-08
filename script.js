@@ -1,6 +1,9 @@
 let attempts = 3;
 let actualCustomers;
 
+const BASE_CUSTOMERS = 100;
+const RATIO = 0.1;
+
 function initialize() {
     document.getElementById("twoMonthsAgo").textContent = "350";
     document.getElementById("lastMonth").textContent = "400";
@@ -8,8 +11,10 @@ function initialize() {
 }
 
 function generateActualCustomers() {
-    // Generate a random number of customers between 300 and 500
-    return Math.floor(Math.random() * (500 - 300 + 1)) + 300;
+    // Generate a random number of customers around our prediction
+    let residents = parseInt(document.getElementById("residents").textContent);
+    let expectedCustomers = BASE_CUSTOMERS + RATIO * residents;
+    return Math.floor(expectedCustomers + (Math.random() * 50 - 25)); // +/- 25 variance
 }
 
 function checkPrediction() {
