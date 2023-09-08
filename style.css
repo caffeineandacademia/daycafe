@@ -18,3 +18,11 @@ input[type="number"] {
     margin-bottom: 20px;
     border-radius: 5px;
 }
+
+#modelInfo {
+    background-color: #eef5ff;
+    padding: 10px;
+    margin: 20px 0;
+    border-radius: 5px;
+    border: 1px solid #d1e1f1;
+}
