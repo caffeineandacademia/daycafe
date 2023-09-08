@@ -1,23 +1,20 @@
-let attempts = 5;
-let actualCustomers;
-
-const BASE_CUSTOMERS = 100;
-const RATIO = 0.1;
-
-function initialize() {
-    // ... Previous initialization code ...
-}
-
-function generateActualCustomers() {
-    // ... Previous logic ...
-}
-
 function checkPrediction() {
     if (attempts > 0) {
-        let predictedCustomers = document.getElementById("predictedCustomers").value;
-        let supplies = document.getElementById("supplies").value;
+        let predictedCustomers = parseInt(document.getElementById("predictedCustomers").value);
+        let supplies = parseInt(document.getElementById("supplies").value);
         actualCustomers = generateActualCustomers();
-        
+
+        let feedbackMessage = "";
+        if (supplies === actualCustomers) {
+            feedbackMessage = "Just Right!";
+        } else if (supplies < actualCustomers) {
+            feedbackMessage = "Shortage! ";
+        } else {
+            feedbackMessage = "Oversupplied! ";
+        }
+        feedbackMessage += "The actual customers were " + actualCustomers + ".";
+        document.getElementById("feedback").textContent = feedbackMessage;
+
         // Adding attempt history
         let historyTableBody = document.getElementById("historyTableBody");
         let newRow = historyTableBody.insertRow();
@@ -25,8 +22,6 @@ function checkPrediction() {
         newRow.insertCell().textContent = predictedCustomers;
         newRow.insertCell().textContent = actualCustomers;
         newRow.insertCell().textContent = actualCustomers - predictedCustomers;
-
-        // ... Rest of the checkPrediction function ...
 
         attempts--;
         document.getElementById("remainingAttempts").textContent = attempts;
